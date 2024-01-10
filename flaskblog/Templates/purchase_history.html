@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title%}
+    Purchase Page
+{% endblock%}
+
+{% block content %}
+    <h1>Purchase History</h1>
+    <table class="table table-hover table-dark">
+        <thead>
+            <tr>
+                <th>Item Name</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in purchased_items %}
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>Rs.{{ item.price }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
